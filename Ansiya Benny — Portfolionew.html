@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://127.0.0.1:8000/portfolio.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ansiya Benny — Portfolio</title>
+  <meta name="description" content="Professional portfolio of Ansiya Benny, a Computer Science student at Sahrdaya College of Engineering and Technology (Autonomous). Expert in Web Dev, Python, Git &amp; AI Tools.">
+  
+  <!-- SEO Tags -->
+  <meta property="og:title" content="Ansiya Benny — Professional Portfolio">
+  <meta property="og:description" content="B.Tech Computer Science Student at Sahrdaya College (Autonomous), Thrissur. Specializing in Web Development, Python, and AI integrations.">
+  <meta property="og:type" content="website">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Ansiya Benny — Portfolionew_files/css2" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="./Ansiya Benny — Portfolionew_files/all.min.css">
+
+  <style>
+    /* ==========================================
+       DESIGN SYSTEM & VARIABLES (HSL)
+       ========================================== */
+    :root {
+      --bg: #07090e;              /* Deep obsidian navy */
+      --bg-surface: #0e131f;      /* Sleek dark blue card */
+      --bg-surface-hover: #151d2f;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-glowing: rgba(0, 229, 201, 0.25);
+      
+      /* Glowing Accents */
+      --accent-cyan: #00e5c9;     /* CarePulse teal/mint */
+      --accent-purple: #8b5cf6;   /* AI & Computer Vision violet */
+      --accent-rose: #ec4899;     /* ArtisanHub creative pink */
+      --accent-blue: #3b82f6;     /* QuizSphere educational blue */
+      
+      /* Text Colors */
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) var(--bg);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 99px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-cyan);
+    }
+
+    /* Layout Utility */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    /* Global Glow Effects */
+    .glow-blur {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.12;
+    }
+
+    /* ==========================================
+       HEADER & NAVIGATION
+       ========================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(7, 9, 14, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      color: var(--text-primary);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      margin-bottom: 5px;
+      transition: var(--transition);
+    }
+
+    .hamburger span:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--bg-surface);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 24px;
+        gap: 20px;
+        display: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+
+    /* ==========================================
+       HERO SECTION
+       ========================================== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      overflow: hidden;
+    }
+
+    #particlesCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 229, 201, 0.08);
+      border: 1px solid rgba(0, 229, 201, 0.2);
+      color: var(--accent-cyan);
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      box-shadow: 0 0 15px rgba(0, 229, 201, 0.1);
+      animation: float-badge 3s ease-in-out infinite;
+    }
+
+    .hero-badge i {
+      font-size: 0.75rem;
+      animation: pulse-ring 2s infinite;
+    }
+
+    .hero-name {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-name span.gradient-text {
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 50%, var(--accent-rose) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    .hero-title {
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+      max-width: 580px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
+      color: #07090e;
+      border: none;
+      box-shadow: 0 8px 24px rgba(0, 229, 201, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 229, 201, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: var(--text-secondary);
+      transform: translateY(-2px);
+    }
+
+    /* Floating scroll indicator */
+    .scroll-down {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+      z-index: 2;
+    }
+
+    .scroll-down i {
+      animation: bounce-scroll 2s infinite;
+      color: var(--accent-cyan);
+    }
+
+    /* Animations */
+    @keyframes float-badge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes bounce-scroll {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-6px); }
+      60% { transform: translateY(-3px); }
+    }
+
+    @keyframes pulse-ring {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+
+    /* ==========================================
+       ABOUT & ACADEMICS
+       ========================================== */
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      border-color: var(--border-glowing);
+      box-shadow: 0 15px 40px rgba(0, 229, 201, 0.05);
+    }
+
+    .about-bio p {
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .about-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .detail-item span.label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .detail-item span.value {
+      font-size: 1rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .academics-card {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .college-header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .college-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--accent-purple);
+      flex-shrink: 0;
+    }
+
+    .college-name h4 {
+      font-size: 1.15rem;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .college-name p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .academics-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .stat-box {
+      text-align: center;
+    }
+
+    .stat-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-purple);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       SKILLS SECTION
+       ========================================== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-card {
+      position: relative;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: var(--transition);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      transition: var(--transition);
+    }
+
+    .skill-card.cyan::before { background: var(--accent-cyan); }
+    .skill-card.purple::before { background: var(--accent-purple); }
+    .skill-card.rose::before { background: var(--accent-rose); }
+    .skill-card.blue::before { background: var(--accent-blue); }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .skill-card.cyan:hover { border-color: rgba(0, 229, 201, 0.4); }
+    .skill-card.purple:hover { border-color: rgba(139, 92, 246, 0.4); }
+    .skill-card.rose:hover { border-color: rgba(236, 72, 153, 0.4); }
+    .skill-card.blue:hover { border-color: rgba(59, 130, 246, 0.4); }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .skill-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .skill-card.cyan .skill-icon-wrap { background: rgba(0, 229, 201, 0.08); color: var(--accent-cyan); }
+    .skill-card.purple .skill-icon-wrap { background: rgba(139, 92, 246, 0.08); color: var(--accent-purple); }
+    .skill-card.rose .skill-icon-wrap { background: rgba(236, 72, 153, 0.08); color: var(--accent-rose); }
+    .skill-card.blue .skill-icon-wrap { background: rgba(59, 130, 246, 0.08); color: var(--accent-blue); }
+
+    .skill-progress-ring {
+      width: 36px;
+      height: 36px;
+      position: relative;
+    }
+
+    .skill-progress-ring svg {
+      width: 36px;
+      height: 36px;
+      transform: rotate(-90deg);
+    }
+
+    .skill-progress-ring circle {
+      fill: none;
+      stroke-width: 3;
+    }
+
+    .skill-progress-ring .bg-ring {
+      stroke: rgba(255,255,255,0.05);
+    }
+
+    .skill-progress-ring .bar-ring {
+      stroke-linecap: round;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      transition: stroke-dashoffset 1.5s ease-in-out;
+    }
+
+    .skill-card.cyan .bar-ring { stroke: var(--accent-cyan); }
+    .skill-card.purple .bar-ring { stroke: var(--accent-purple); }
+    .skill-card.rose .bar-ring { stroke: var(--accent-rose); }
+    .skill-card.blue .bar-ring { stroke: var(--accent-blue); }
+
+    .skill-progress-ring span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.65rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .skill-name {
+      font-size: 1.15rem;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .skill-desc {
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* ==========================================
+       PROJECTS HUD
+       ========================================== */
+    .project-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    .project-row {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .project-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .project-row:nth-child(even) .project-info {
+        order: 1;
+      }
+      .project-row:nth-child(even) .project-visual {
+        order: 2;
+      }
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .project-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 99px;
+    }
+
+    .project-row.carepulse-row .project-tag { background: rgba(0, 229, 201, 0.08); color: var(--accent-cyan); }
+    .project-row.quiz-row .project-tag { background: rgba(59, 130, 246, 0.08); color: var(--accent-blue); }
+    .project-row.store-row .project-tag { background: rgba(236, 72, 153, 0.08); color: var(--accent-rose); }
+    .project-row.python-row .project-tag { background: rgba(139, 92, 246, 0.08); color: var(--accent-purple); }
+
+    .project-title {
+      font-size: 2rem;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .project-desc {
+      font-size: 1.02rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .tech-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .tech-badge {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+
+    .project-visual {
+      position: relative;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: #090c13;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ------------------------------------------
+       WIDGET 1: CAREPULSE LIVE METRICS
+       ------------------------------------------ */
+    .carepulse-widget {
+      width: 100%;
+      height: 100%;
+      background: #0a0d17;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #f1f5f9;
+    }
+
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-bottom: 14px;
+    }
+
+    .patient-avatar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .patient-avatar img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-cyan), #00c9a7);
+    }
+
+    .patient-info h5 {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .patient-info p {
+      font-size: 0.7rem;
+      color: var(--accent-cyan);
+    }
+
+    .care-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: rgba(0,229,201,0.1);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0,229,201,0.25);
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    .vitals-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .vital-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      position: relative;
+    }
+
+    .vital-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 3px;
+    }
+
+    .vital-card.pulse-card::before { background: var(--accent-cyan); }
+    .vital-card.sugar-card::before { background: #3b82f6; }
+
+    .vital-card h6 {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .vital-num {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: monospace;
+      color: var(--text-primary);
+    }
+
+    .vital-num span {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .ecg-box {
+      height: 34px;
+      margin-top: 8px;
+    }
+
+    .ecg-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ecg-path {
+      stroke: var(--accent-cyan);
+      fill: none;
+      stroke-width: 2;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw-ecg 4s linear infinite;
+    }
+
+    @keyframes draw-ecg {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .carepulse-feed-input {
+      display: flex;
+      gap: 8px;
+    }
+
+    .carepulse-feed-input input {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      color: var(--text-primary);
+      font-size: 0.8rem;
+      outline: none;
+    }
+
+    .carepulse-feed-input button {
+      background: var(--accent-cyan);
+      color: #07090e;
+      border: none;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .carepulse-feed-input button:hover {
+      background: #00c9a7;
+    }
+
+    /* ------------------------------------------
+       WIDGET 2: MINI QUIZSPHERE GAME
+       ------------------------------------------ */
+    .quiz-widget {
+      width: 100%;
+      height: 100%;
+      background: #0c0f1b;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #f1f5f9;
+    }
+
+    .quiz-widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-bottom: 12px;
+      font-size: 0.85rem;
+    }
+
+    .quiz-tracker {
+      font-weight: 700;
+      color: var(--accent-blue);
+    }
+
+    .quiz-timer {
+      background: rgba(236,72,153,0.1);
+      color: #ec4899;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .quiz-body {
+      margin: 16px 0;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .quiz-question {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-align: center;
+      min-height: 48px;
+    }
+
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .quiz-opt-btn {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .quiz-opt-btn:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.2);
+      color: var(--text-primary);
+      transform: translateX(2px);
+    }
+
+    .quiz-opt-btn.correct {
+      background: rgba(16,185,129,0.15) !important;
+      border-color: #10b981 !important;
+      color: #10b981 !important;
+    }
+
+    .quiz-opt-btn.incorrect {
+      background: rgba(239,68,68,0.15) !important;
+      border-color: #ef4444 !important;
+      color: #ef4444 !important;
+    }
+
+    .quiz-widget-footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .quiz-result-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .quiz-next-btn {
+      background: var(--accent-blue);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* ------------------------------------------
+       WIDGET 3: ARTISANHUB GALLERY GRID
+       ========================================== */
+    .artisanhub-widget {
+      width: 100%;
+      height: 100%;
+      background: #0d0b0f;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .store-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .store-logo {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .store-logo span {
+      color: var(--accent-rose);
+    }
+
+    .store-tags {
+      display: flex;
+      gap: 6px;
+    }
+
+    .store-tag-pill {
+      font-size: 0.65rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 99px;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .store-tag-pill.active {
+      background: rgba(236,72,153,0.1);
+      border-color: var(--accent-rose);
+      color: var(--accent-rose);
+    }
+
+    .store-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex-grow: 1;
+      margin-bottom: 12px;
+    }
+
+    .art-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .art-card:hover {
+      transform: scale(1.02);
+      border-color: var(--accent-rose);
+    }
+
+    .art-img-box {
+      flex-grow: 1;
+      position: relative;
+      overflow: hidden;
+      background: #19161d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .art-icon {
+      font-size: 2.2rem;
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+
+    .art-info {
+      padding: 10px;
+      background: rgba(13,11,15,0.85);
+      border-top: 1px solid var(--border);
+    }
+
+    .art-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .art-price {
+      font-size: 0.72rem;
+      color: var(--accent-rose);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .art-like-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.6);
+      padding: 3px 6px;
+      border-radius: 99px;
+      font-size: 0.65rem;
+      color: #ff4757;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .store-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 10px;
+    }
+
+    .seller-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .seller-badge i {
+      color: var(--accent-rose);
+    }
+
+    /* ------------------------------------------
+       WIDGET 4: PYTHON PYTHON / AI TERMINAL SIMULATOR
+       ========================================== */
+    .terminal-widget {
+      width: 100%;
+      height: 100%;
+      background: #08070b;
+      display: flex;
+      flex-direction: column;
+      color: #38bdf8;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+    }
+
+    .term-header {
+      background: #111;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+
+    .term-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .term-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .term-dot.red { background: #ef4444; }
+    .term-dot.yellow { background: #f59e0b; }
+    .term-dot.green { background: #10b981; }
+
+    .term-title {
+      font-size: 0.72rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .term-tabs {
+      display: flex;
+      background: #0d0c12;
+      border-bottom: 1px solid #222;
+    }
+
+    .term-tab {
+      padding: 8px 16px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      border-right: 1px solid #222;
+      cursor: pointer;
+      background: #0d0c12;
+    }
+
+    .term-tab.active {
+      background: #08070b;
+      color: var(--accent-purple);
+      border-bottom: 1px solid transparent;
+      font-weight: 600;
+    }
+
+    .term-content {
+      padding: 16px;
+      flex-grow: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .term-line {
+      line-height: 1.4;
+      white-space: pre-wrap;
+    }
+
+    .term-prompt {
+      color: #10b981;
+    }
+
+    .term-input {
+      color: #f1f5f9;
+    }
+
+    .term-output {
+      color: #94a3b8;
+    }
+
+    .term-action-bar {
+      padding: 10px 16px;
+      background: #0d0c12;
+      border-top: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .run-btn {
+      background: var(--accent-purple);
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.78rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+    }
+
+    .run-btn:hover {
+      background: #7c3aed;
+    }
+
+    /* ==========================================
+       CONTACT SECTION
+       ========================================== */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    @media (max-width: 800px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-info-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-info-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: var(--transition);
+    }
+
+    .contact-info-card:hover {
+      border-color: var(--border-glowing);
+      transform: translateX(4px);
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .contact-info-card.email-card .contact-icon { background: rgba(0, 229, 201, 0.08); color: var(--accent-cyan); }
+    .contact-info-card.linkedin-card .contact-icon { background: rgba(59, 130, 246, 0.08); color: var(--accent-blue); }
+    .contact-info-card.github-card .contact-icon { background: rgba(139, 92, 246, 0.08); color: var(--accent-purple); }
+
+    .contact-detail h5 {
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .contact-detail p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 480px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      color: var(--text-primary);
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 10px rgba(0, 229, 201, 0.15);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .form-status {
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-status.success {
+      color: #10b981;
+      display: flex;
+    }
+
+    .form-status.sending {
+      color: var(--accent-cyan);
+      display: flex;
+    }
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+      background: #05070a;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .footer-logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .footer-logo span {
+      color: var(--accent-cyan);
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Scroll Reveal Initial States */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Blur Orbs -->
+  <div class="glow-blur" style="top: 15%; left: 10%; background-color: var(--accent-cyan);"></div>
+  <div class="glow-blur" style="top: 45%; right: 10%; background-color: var(--accent-purple);"></div>
+  <div class="glow-blur" style="top: 80%; left: 20%; background-color: var(--accent-rose);"></div>
+
+  <!-- ====== HEADER ====== -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="http://127.0.0.1:8000/portfolio.html#hero" class="logo">
+        &lt;<span>Ansiya</span> /&gt;
+      </a>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links-list">
+        <li><a href="http://127.0.0.1:8000/portfolio.html#hero" class="active">Home</a></li>
+        <li><a href="http://127.0.0.1:8000/portfolio.html#about" class="">About</a></li>
+        <li><a href="http://127.0.0.1:8000/portfolio.html#skills">Skills</a></li>
+        <li><a href="http://127.0.0.1:8000/portfolio.html#projects">Projects</a></li>
+        <li><a href="http://127.0.0.1:8000/portfolio.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ====== MAIN CONTENT ====== -->
+  <main>
+
+    <!-- ====== HERO SECTION ====== -->
+    <section id="hero">
+      <canvas id="particlesCanvas" width="1518" height="732"></canvas>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-graduation-cap"></i> B.Tech Computer Science (2nd Year)
+          </div>
+          <h1 class="hero-name">
+            Hi, I'm <br>
+            <span class="gradient-text">Ansiya Benny</span>
+          </h1>
+          <h2 class="hero-title">Aspiring Software Engineer &amp; AI Dev</h2>
+          <p class="hero-desc">
+            A passionate student at Sahrdaya College of Engineering and Technology <strong style="color:var(--accent-cyan);">(Autonomous)</strong>, Kodakara — building clean, responsive user interfaces and experimenting with Python automation, computer vision, and AI tooling.
+          </p>
+          <div class="hero-ctas">
+            <a href="http://127.0.0.1:8000/portfolio.html#projects" class="btn btn-primary">
+              <i class="fa-solid fa-code"></i> View Projects
+            </a>
+            <a href="http://127.0.0.1:8000/portfolio.html#contact" class="btn btn-secondary">
+              <i class="fa-regular fa-envelope"></i> Get In Touch
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-down">
+        <span>Scroll Down</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- ====== ABOUT SECTION ====== -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title reveal visible">About Me</h2>
+        <p class="section-subtitle reveal visible">Academic foundation, personal interests, and coding goals.</p>
+        
+        <div class="about-grid">
+          <div class="card reveal visible">
+            <div class="about-bio">
+              <p>
+                I am a second-year <strong style="color:var(--text-primary);">B.Tech Computer Science</strong> student at <strong style="color:var(--accent-cyan);">Sahrdaya College of Engineering and Technology (Autonomous)</strong>, Kodakara, Thrissur. Since beginning my technical studies, I've developed a strong curiosity for engineering solutions that bridge clean UI aesthetics with powerful backends.
+              </p>
+              <p>
+                My projects range from responsive, user-friendly frontend designs (like healthcare hubs and interactive study tools) to backend automation scripts written in Python 3.10. I actively collaborate using Git and GitHub, and I enjoy incorporating AI tools into my planning and development cycles.
+              </p>
+            </div>
+            
+            <div class="about-details">
+              <div class="detail-item">
+                <span class="label">Location</span>
+                <span class="value">Kodakara, Thrissur, Kerala</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Primary Email</span>
+                <span class="value">ansiyabenny@gmail.com</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">GitHub Host</span>
+                <span class="value">ansiyabenny96.github.io</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">University Focus</span>
+                <span class="value">Computer Science &amp; Eng.</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card academics-card reveal visible" style="transition-delay: 0.1s;">
+            <h3 style="margin-bottom: 12px; font-size: 1.25rem;">Academic Details</h3>
+            <div class="college-header">
+              <div class="college-icon">
+                <i class="fa-solid fa-university"></i>
+              </div>
+              <div class="college-name">
+                <h4>Sahrdaya College of Engineering &amp; Tech <span style="font-size:0.7rem; background:rgba(0,229,201,0.1); color:var(--accent-cyan); border:1px solid rgba(0,229,201,0.25); padding:2px 8px; border-radius:99px; font-weight:600; letter-spacing:0.04em;">Autonomous</span></h4>
+                <p>Kodakara, Thrissur, Kerala</p>
+              </div>
+            </div>
+            
+            <p style="font-size: 0.95rem; line-height: 1.6;">
+              Undergoing comprehensive training in computational systems, algorithm design, data structures, and object-oriented programming methodologies.
+            </p>
+            
+            <div class="academics-stats">
+              <div class="stat-box">
+                <div class="stat-val">2<sup>nd</sup> Year</div>
+                <div class="stat-label">B.Tech Student</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-val">KTU</div>
+                <div class="stat-label">Affiliated Univ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SKILLS SECTION ====== -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title reveal">Technical Toolkit</h2>
+        <p class="section-subtitle reveal">The programming languages, systems, and tools I use to bring ideas to life.</p>
+        
+        <div class="skills-grid">
+          <!-- Skill: HTML5 -->
+          <div class="skill-card cyan reveal">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-brands fa-html5"></i>
+              </div>
+              <div class="skill-progress-ring">
+                <svg>
+                  <circle class="bg-ring" cx="18" cy="18" r="16"></circle>
+                  <circle class="bar-ring" cx="18" cy="18" r="16" data-percent="90"></circle>
+                </svg>
+                <span>90%</span>
+              </div>
+            </div>
+            <h4 class="skill-name">HTML5</h4>
+            <p class="skill-desc">Crafting clean, accessible, semantic web layouts. Prioritizing document structure and SEO best practices.</p>
+          </div>
+
+          <!-- Skill: CSS3 -->
+          <div class="skill-card cyan reveal" style="transition-delay: 0.05s;">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-brands fa-css3-alt"></i>
+              </div>
+              <div class="skill-progress-ring">
+                <svg>
+                  <circle class="bg-ring" cx="18" cy="18" r="16"></circle>
+                  <circle class="bar-ring" cx="18" cy="18" r="16" data-percent="85"></circle>
+                </svg>
+                <span>85%</span>
+              </div>
+            </div>
+            <h4 class="skill-name">CSS3</h4>
+            <p class="skill-desc">Responsive designs using flexbox, grids, media queries, keyframe animations, and beautiful custom design tokens.</p>
+          </div>
+
+          <!-- Skill: Python 3.10 -->
+          <div class="skill-card purple reveal" style="transition-delay: 0.1s;">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-brands fa-python"></i>
+              </div>
+              <div class="skill-progress-ring">
+                <svg>
+                  <circle class="bg-ring" cx="18" cy="18" r="16"></circle>
+                  <circle class="bar-ring" cx="18" cy="18" r="16" data-percent="75"></circle>
+                </svg>
+                <span>75%</span>
+              </div>
+            </div>
+            <h4 class="skill-name">Python 3.10</h4>
+            <p class="skill-desc">Writing custom script automation, algorithm implementations, and computer vision pipelines (OpenCV / MediaPipe).</p>
+          </div>
+
+          <!-- Skill: Git & GitHub -->
+          <div class="skill-card rose reveal" style="transition-delay: 0.15s;">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-brands fa-git-alt"></i>
+              </div>
+              <div class="skill-progress-ring">
+                <svg>
+                  <circle class="bg-ring" cx="18" cy="18" r="16"></circle>
+                  <circle class="bar-ring" cx="18" cy="18" r="16" data-percent="80"></circle>
+                </svg>
+                <span>80%</span>
+              </div>
+            </div>
+            <h4 class="skill-name">Git &amp; GitHub</h4>
+            <p class="skill-desc">Practicing reliable version control: branching strategies, merging, commits, pull requests, and host deployments.</p>
+          </div>
+
+          <!-- Skill: AI Prompt Tools -->
+          <div class="skill-card purple reveal" style="transition-delay: 0.2s;">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <div class="skill-progress-ring">
+                <svg>
+                  <circle class="bg-ring" cx="18" cy="18" r="16"></circle>
+                  <circle class="bar-ring" cx="18" cy="18" r="16" data-percent="85"></circle>
+                </svg>
+                <span>85%</span>
+              </div>
+            </div>
+            <h4 class="skill-name">AI Tools &amp; LLMs</h4>
+            <p class="skill-desc">Leveraging Claude, Gemini, ChatGPT for study planning, syntax references, debugging logs, and productive code workflows.</p>
+          </div>
+
+          <!-- Skill: VS Code -->
+          <div class="skill-card blue reveal" style="transition-delay: 0.25s;">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div class="skill-progress-ring">
+                <svg>
+                  <circle class="bg-ring" cx="18" cy="18" r="16"></circle>
+                  <circle class="bar-ring" cx="18" cy="18" r="16" data-percent="80"></circle>
+                </svg>
+                <span>80%</span>
+              </div>
+            </div>
+            <h4 class="skill-name">VS Code</h4>
+            <p class="skill-desc">Configuring extensions, code formatting rules, terminal setups, and debugger parameters for productive development.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROJECTS SECTION ====== -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title reveal">Featured Projects</h2>
+        <p class="section-subtitle reveal">Live dashboards, interactive simulations, and functional coding projects.</p>
+        
+        <div class="project-showcase">
+          
+          <!-- PROJECT 1: CAREPULSE -->
+          <div class="project-row carepulse-row reveal">
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-tag">Healthcare Hub</span>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">2024 · Active Demo</span>
+              </div>
+              <h3 class="project-title">CarePulse — Family Caregiver Dashboard</h3>
+              <p class="project-desc">
+                An intuitive coordination dashboard designed to reduce caregiver burnout. It features a central clinical timeline, quick event logging (for medication entries, symptom alerts, or vitals updates), and status indicators for standby family helpers.
+              </p>
+              <div class="tech-badges">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3 Custom Tokens</span>
+                <span class="tech-badge">Vanilla JS</span>
+                <span class="tech-badge">Local Storage</span>
+              </div>
+              <div class="project-actions">
+                <a href="http://127.0.0.1:8000/prot/carepulse.html" class="btn btn-secondary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Full App
+                </a>
+              </div>
+            </div>
+            
+            <div class="project-visual">
+              <!-- CarePulse Live Widget -->
+              <div class="carepulse-widget">
+                <div class="widget-header">
+                  <div class="patient-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 100 100&#39;%3E%3Crect width=&#39;100%25&#39; height=&#39;100%25&#39; fill=&#39;%252324305A&#39;/%3E%3Ctext x=&#39;50%25&#39; y=&#39;50%25&#39; dominant-baseline=&#39;middle&#39; text-anchor=&#39;middle&#39; font-family=&#39;sans-serif&#39; font-size=&#39;32&#39; fill=&#39;white&#39; font-weight=&#39;bold&#39;%3EAM%3C/text%3E%3C/svg%3E" alt="Arthur Miller">
+                    <div class="patient-info">
+                      <h5>Arthur Miller</h5>
+                      <p>Post-Stroke Care</p>
+                    </div>
+                  </div>
+                  <span class="care-badge"><i class="fa-solid fa-heart pulse"></i> Live Sync</span>
+                </div>
+                
+                <div class="vitals-cards">
+                  <div class="vital-card pulse-card">
+                    <h6>Pulse Rate</h6>
+                    <div class="vital-num"><span id="widget-bpm">73</span> <span>BPM</span></div>
+                    <div class="ecg-box">
+                      <svg class="ecg-svg" viewBox="0 0 100 30">
+                        <path class="ecg-path" d="M0,15 L20,15 L24,5 L28,25 L32,15 L45,15 L48,10 L51,20 L54,15 L70,15 L74,5 L78,25 L82,15 L100,15"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="vital-card sugar-card">
+                    <h6>Blood Sugar</h6>
+                    <div class="vital-num">105 <span>mg/dL</span></div>
+                    <p style="font-size: 0.65rem; color: #10b981; margin-top: 8px;">
+                      <i class="fa-solid fa-circle-check"></i> Fasting OK
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="carepulse-feed-input">
+                  <input type="text" id="carepulse-widget-input" placeholder="e.g., Log BP 120/80">
+                  <button id="carepulse-widget-btn">Add Log</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: QUIZSPHERE -->
+          <div class="project-row quiz-row reveal">
+            <div class="project-visual">
+              <!-- Interactive Trivia Widget -->
+              <div class="quiz-widget">
+                <div class="quiz-widget-header">
+                  <span class="quiz-tracker"><i class="fa-solid fa-circle-play"></i> Trivia Sphere</span>
+                  <span class="quiz-timer" id="trivia-timer">15s Timer</span>
+                </div>
+                
+                <div class="quiz-body">
+                  <div class="quiz-question" id="trivia-question">Click a category to start the mini trivia quiz!</div>
+                  <div class="quiz-options" id="trivia-options">
+                    <button class="quiz-opt-btn" onclick="startTriviaGame()">Computer Science</button>
+                    <button class="quiz-opt-btn" onclick="startTriviaGame()">Web Development</button>
+                    <button class="quiz-opt-btn" onclick="startTriviaGame()">Python Programming</button>
+                    <button class="quiz-opt-btn" onclick="startTriviaGame()">General Knowledge</button>
+                  </div>
+                </div>
+                
+                <div class="quiz-widget-footer">
+                  <span class="quiz-result-text" id="trivia-feedback">Score: 0/3</span>
+                  <button class="quiz-next-btn" id="trivia-next-btn">Next Question</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-tag">Trivia Game</span>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">2024 · Self-Contained App</span>
+              </div>
+              <h3 class="project-title">QuizSphere — Interactive Study Quiz</h3>
+              <p class="project-desc">
+                An engaging academic trivia application built to test student knowledge. The main version hooks directly to the OpenTDB trivia repository API, rendering questions dynamically across 10 categories, utilizing a circular countdown clock and synthesized Web Audio rewards.
+              </p>
+              <div class="tech-badges">
+                <span class="tech-badge">HTML5 API</span>
+                <span class="tech-badge">Web Audio Synth</span>
+                <span class="tech-badge">OpenTDB API</span>
+                <span class="tech-badge">JSON Parsing</span>
+              </div>
+              <div class="project-actions">
+                <a href="http://127.0.0.1:8000/quiz.html" class="btn btn-secondary">
+                  <i class="fa-solid fa-gamepad"></i> Open Quiz Sphere
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: ARTISANHUB -->
+          <div class="project-row store-row reveal">
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-tag">E-Commerce Feed</span>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">2024 · Craft Platform</span>
+              </div>
+              <h3 class="project-title">ArtisanHub — Crafts Store &amp; Masonry Feed</h3>
+              <p class="project-desc">
+                A visual marketplace platform designed specifically for local crafters. It utilizes a masonry grid alignment to showcase distinct creations. The backend is configured as a static HTTP platform built using Next.js structures, CSS rendering, and responsive detail expansion.
+              </p>
+              <div class="tech-badges">
+                <span class="tech-badge">Next.js (Config)</span>
+                <span class="tech-badge">TailwindCSS</span>
+                <span class="tech-badge">Node.js Server</span>
+                <span class="tech-badge">Masonry CSS</span>
+              </div>
+              <div class="project-actions">
+                <a href="http://127.0.0.1:8000/artisanhub/public/index.html" class="btn btn-secondary">
+                  <i class="fa-solid fa-store"></i> View Frontend
+                </a>
+              </div>
+            </div>
+            
+            <div class="project-visual">
+              <!-- ArtisanHub Showcase Widget -->
+              <div class="artisanhub-widget">
+                <div class="store-header">
+                  <div class="store-logo">Artisan<span>Hub</span></div>
+                  <div class="store-tags">
+                    <span class="store-tag-pill active">All</span>
+                    <span class="store-tag-pill">Paintings</span>
+                    <span class="store-tag-pill">Ceramics</span>
+                  </div>
+                </div>
+                
+                <div class="store-grid">
+                  <div class="art-card">
+                    <div class="art-img-box">
+                      <i class="fa-solid fa-palette art-icon"></i>
+                      <span class="art-like-badge"><i class="fa-solid fa-heart"></i> 48</span>
+                    </div>
+                    <div class="art-info">
+                      <div class="art-title">Hand-painted Acrylic</div>
+                      <div class="art-price">₹1,200</div>
+                    </div>
+                  </div>
+                  <div class="art-card">
+                    <div class="art-img-box">
+                      <i class="fa-solid fa-mug-hot art-icon"></i>
+                      <span class="art-like-badge"><i class="fa-solid fa-heart"></i> 32</span>
+                    </div>
+                    <div class="art-info">
+                      <div class="art-title">Glazed Clay Mug</div>
+                      <div class="art-price">₹650</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="store-footer">
+                  <div class="seller-badge"><i class="fa-solid fa-circle-check"></i> 10+ Crafters Active</div>
+                  <span>Thrissur Crafters Guild</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: PYTHON SCRIPTS -->
+          <div class="project-row python-row reveal">
+            <div class="project-visual">
+              <!-- Interactive Python Console Widget -->
+              <div class="terminal-widget">
+                <div class="term-header">
+                  <div class="term-dots">
+                    <span class="term-dot red"></span>
+                    <span class="term-dot yellow"></span>
+                    <span class="term-dot green"></span>
+                  </div>
+                  <span class="term-title">ansi-dev@sahrdaya-pc: ~/zia.py</span>
+                </div>
+                <div class="term-tabs">
+                  <div class="term-tab active" id="tab-planner" onclick="selectTerminalTab(&#39;planner&#39;)">study_planner.py</div>
+                  <div class="term-tab" id="tab-gestures" onclick="selectTerminalTab(&#39;gestures&#39;)">cia.py (Hand Tracker)</div>
+                </div>
+                <div class="term-content" id="terminal-screen">
+                  <div class="term-line"><span class="term-prompt">ansi-dev@sahrdaya-pc:~$</span> <span class="term-input">python study_planner.py --topic "Databases"</span></div>
+                  <div class="term-line term-output">[INFO] Script initialized. Click "Run Script" to execute study planner schedule generator...</div>
+                </div>
+                <div class="term-action-bar">
+                  <span style="font-size:0.7rem; color:#64748b;">Python 3.10 Environment</span>
+                  <button class="run-btn" onclick="executeSimulatedScript()"><i class="fa-solid fa-play"></i> Run Script</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-tag">AI &amp; Python Tools</span>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">2024 · Logic Scripts</span>
+              </div>
+              <h3 class="project-title">AI Study Planner &amp; OpenCV Gesture Tracker</h3>
+              <p class="project-desc">
+                Academic logic implementations leveraging Python 3.10. Built a prompt-engineered **AI Study Planner** to auto-generate preparation schedules from syllabi. Also coded **cia.py**—a real-time OpenCV &amp; MediaPipe hand tracker script that overlays raised finger counts on a live HUD camera stream.
+              </p>
+              <div class="tech-badges">
+                <span class="tech-badge">Python 3.10</span>
+                <span class="tech-badge">OpenCV</span>
+                <span class="tech-badge">MediaPipe Hands</span>
+                <span class="tech-badge">AI Prompting</span>
+              </div>
+              <div class="project-actions">
+                <a href="http://127.0.0.1:8000/zia.py/cia.py" class="btn btn-secondary">
+                  <i class="fa-solid fa-file-code"></i> View Hand Tracker Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CONTACT SECTION ====== -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">Let's Connect</h2>
+        <p class="section-subtitle reveal">Feel free to reach out for collaborations, academic projects, or simply to say hello.</p>
+        
+        <div class="contact-wrapper">
+          <div class="contact-info-cards reveal">
+            <!-- Email -->
+            <a href="mailto:ansiyabenny@gmail.com" class="contact-info-card email-card">
+              <div class="contact-icon">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="contact-detail">
+                <h5>Email Address</h5>
+                <p>ansiyabenny@gmail.com</p>
+              </div>
+            </a>
+            
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/ansiyabenny" target="_blank" rel="noopener" class="contact-info-card linkedin-card">
+              <div class="contact-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              <div class="contact-detail">
+                <h5>LinkedIn</h5>
+                <p>linkedin.com/in/ansiyabenny</p>
+              </div>
+            </a>
+            
+            <!-- GitHub -->
+            <a href="https://github.com/ansiya225030-spec" target="_blank" rel="noopener" class="contact-info-card github-card">
+              <div class="contact-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="contact-detail">
+                <h5>GitHub Profile</h5>
+                <p>github.com/ansiya225030-spec</p>
+              </div>
+            </a>
+          </div>
+          
+          <div class="card reveal" style="transition-delay: 0.1s;">
+            <form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" required="" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" required="" placeholder="john@example.com">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" required="" placeholder="Write your message here..."></textarea>
+              </div>
+              
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+                <button type="submit" class="btn btn-primary" style="width: fit-content;">
+                  <i class="fa-regular fa-paper-plane"></i> Send Message
+                </button>
+                <span class="form-status" id="form-status-msg"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        &lt;<span>Ansiya Benny</span> /&gt;
+      </div>
+      <p class="copyright">
+        © <span id="year">2026</span>. Crafted with <span style="color:var(--accent-cyan);">✦</span> using Vanilla HTML &amp; CSS.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ====== JAVASCRIPT LOGIC ====== -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ==========================================
+    // MOBILE NAV MENU TOGGLE
+    // ==========================================
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navLinksList = document.getElementById('nav-links-list');
+
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('open');
+      navLinksList.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('open');
+        navLinksList.classList.remove('active');
+      });
+    });
+
+    // ==========================================
+    // ACTIVE NAVIGATION LINK HIGHLIGHT ON SCROLL
+    // ==========================================
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 250)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // ==========================================
+    // INTERACTIVE HERO PARTICLES CANVAS
+    // ==========================================
+    const canvas = document.getElementById('particlesCanvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const mouse = {
+      x: null,
+      y: null,
+      radius: 120
+    };
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    window.addEventListener('mousemove', (event) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = event.clientX - rect.left;
+      mouse.y = event.clientY - rect.top;
+    });
+
+    window.addEventListener('mouseleave', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    class Particle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 2 + 1;
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.density = (Math.random() * 30) + 15;
+        this.velocity = {
+          x: (Math.random() - 0.5) * 0.5,
+          y: (Math.random() - 0.5) * 0.5
+        };
+      }
+
+      draw() {
+        ctx.fillStyle = 'rgba(0, 229, 201, 0.4)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      update() {
+        // Natural drift
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
+
+        // Bounce on boundary
+        if (this.x < 0 || this.x > canvas.width) this.velocity.x *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.velocity.y *= -1;
+
+        // Mouse interaction
+        if (mouse.x != null && mouse.y != null) {
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < mouse.radius) {
+            let force = (mouse.radius - distance) / mouse.radius;
+            let directionX = dx / distance;
+            let directionY = dy / distance;
+            this.x -= directionX * force * 3;
+            this.y -= directionY * force * 3;
+          }
+        }
+      }
+    }
+
+    function initParticles() {
+      particlesArray = [];
+      const numberOfParticles = Math.min(60, Math.floor((canvas.width * canvas.height) / 14000));
+      for (let i = 0; i < numberOfParticles; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        particlesArray.push(new Particle(x, y));
+      }
+    }
+    initParticles();
+    window.addEventListener('resize', initParticles);
+
+    function connectParticles() {
+      let opacityValue = 1;
+      for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+          let dx = particlesArray[a].x - particlesArray[b].x;
+          let dy = particlesArray[a].y - particlesArray[b].y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 110) {
+            opacityValue = 1 - (distance / 110);
+            ctx.strokeStyle = `rgba(139, 92, 246, ${opacityValue * 0.15})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].draw();
+        particlesArray[i].update();
+      }
+      connectParticles();
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // ==========================================
+    // SCROLL REVEAL OBSERVER
+    // ==========================================
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ==========================================
+    // SKILL CIRCLES DRAW OBSERVER
+    // ==========================================
+    const skillCards = document.querySelectorAll('.skill-card');
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const ring = entry.target.querySelector('.bar-ring');
+          if (ring) {
+            const percent = ring.getAttribute('data-percent');
+            ring.style.strokeDashoffset = 100 - percent;
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+    skillCards.forEach(card => skillObserver.observe(card));
+
+    // ==========================================
+    // CAREPULSE WIDGET INTERACTIVE BEHAVIORS
+    // ==========================================
+    const bpmVal = document.getElementById('widget-bpm');
+    setInterval(() => {
+      // Simulate live fluctuating heart-rate
+      const base = 72;
+      const deviation = Math.floor(Math.random() * 5) - 2;
+      bpmVal.textContent = base + deviation;
+    }, 1800);
+
+    const cpInput = document.getElementById('carepulse-widget-input');
+    const cpBtn = document.getElementById('carepulse-widget-btn');
+
+    cpBtn.addEventListener('click', () => {
+      const val = cpInput.value.trim();
+      if (!val) return;
+      alert(`[CarePulse Simulator] Logged Event:\n"${val}" has been successfully broadcast to Care Circle!`);
+      cpInput.value = '';
+    });
+
+    // ==========================================
+    // QUIZSPHERE WIDGET INTERACTIVE BEHAVIORS
+    // ==========================================
+    const triviaQuizData = [
+      {
+        question: "Which CSS property adds spacing inside a block, between content and borders?",
+        options: ["Margin", "Padding", "Border-width", "Gap"],
+        answer: 1
+      },
+      {
+        question: "Which of the following is correct syntax to print text in Python 3.10?",
+        options: ["print('Hello')", "print 'Hello'", "console.log('Hello')", "echo 'Hello'"],
+        answer: 0
+      },
+      {
+        question: "What is Git primarily used for in software engineering?",
+        options: ["Web Styling", "Database Indexing", "Version Control", "Compiling Code"],
+        answer: 2
+      }
+    ];
+
+    let triviaIndex = 0;
+    let triviaScore = 0;
+    let triviaTimer = null;
+    let secondsLeft = 15;
+    
+    const trivQuestion = document.getElementById('trivia-question');
+    const trivOptions = document.getElementById('trivia-options');
+    const trivFeedback = document.getElementById('trivia-feedback');
+    const trivTimerEl = document.getElementById('trivia-timer');
+    const trivNextBtn = document.getElementById('trivia-next-btn');
+
+    function startTriviaGame() {
+      triviaIndex = 0;
+      triviaScore = 0;
+      trivNextBtn.style.display = 'none';
+      loadTriviaQuestion();
+    }
+
+    function startTimer() {
+      clearInterval(triviaTimer);
+      secondsLeft = 15;
+      trivTimerEl.textContent = `${secondsLeft}s Left`;
+      triviaTimer = setInterval(() => {
+        secondsLeft--;
+        trivTimerEl.textContent = `${secondsLeft}s Left`;
+        if (secondsLeft <= 0) {
+          clearInterval(triviaTimer);
+          revealTriviaAnswer(-1); // timeout
+        }
+      }, 1000);
+    }
+
+    function loadTriviaQuestion() {
+      if (triviaIndex >= triviaQuizData.length) {
+        clearInterval(triviaTimer);
+        trivQuestion.textContent = "🏆 Mini Quiz Completed! Excellent job!";
+        trivOptions.innerHTML = `<button class="quiz-opt-btn" onclick="startTriviaGame()" style="grid-column: 1 / span 2; text-align: center;">Play Again</button>`;
+        trivFeedback.textContent = `Total Score: ${triviaScore}/${triviaQuizData.length}`;
+        trivTimerEl.textContent = "Done";
+        trivNextBtn.style.display = 'none';
+        return;
+      }
+
+      startTimer();
+      const currentQ = triviaQuizData[triviaIndex];
+      trivQuestion.textContent = currentQ.question;
+      trivFeedback.textContent = `Score: ${triviaScore} | Question ${triviaIndex + 1}/${triviaQuizData.length}`;
+      
+      trivOptions.innerHTML = '';
+      currentQ.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-opt-btn';
+        btn.textContent = opt;
+        btn.onclick = () => selectTriviaOption(idx);
+        trivOptions.appendChild(btn);
+      });
+      trivNextBtn.style.display = 'none';
+    }
+
+    function selectTriviaOption(idx) {
+      clearInterval(triviaTimer);
+      revealTriviaAnswer(idx);
+    }
+
+    function revealTriviaAnswer(selectedIdx) {
+      const currentQ = triviaQuizData[triviaIndex];
+      const buttons = trivOptions.querySelectorAll('button');
+      
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === currentQ.answer) {
+          btn.classList.add('correct');
+        } else if (idx === selectedIdx) {
+          btn.classList.add('incorrect');
+        }
+      });
+
+      if (selectedIdx === currentQ.answer) {
+        triviaScore++;
+        trivFeedback.textContent = `Score: ${triviaScore} | Correct!`;
+      } else if (selectedIdx === -1) {
+        trivFeedback.textContent = `Score: ${triviaScore} | Time is up!`;
+      } else {
+        trivFeedback.textContent = `Score: ${triviaScore} | Incorrect!`;
+      }
+
+      triviaIndex++;
+      trivNextBtn.style.display = 'block';
+    }
+
+    trivNextBtn.addEventListener('click', () => {
+      loadTriviaQuestion();
+    });
+
+    // ==========================================
+    // PYTHON & AI CONSOLE SIMULATOR
+    // ==========================================
+    let activeTerminalTab = 'planner';
+    const termScreen = document.getElementById('terminal-screen');
+    const tabPlanner = document.getElementById('tab-planner');
+    const tabGestures = document.getElementById('tab-gestures');
+
+    function selectTerminalTab(tab) {
+      activeTerminalTab = tab;
+      if (tab === 'planner') {
+        tabPlanner.classList.add('active');
+        tabGestures.classList.remove('active');
+        termScreen.innerHTML = `
+          <div class="term-line"><span class="term-prompt">ansi-dev@sahrdaya-pc:~$</span> <span class="term-input">python study_planner.py --topic "Databases"</span></div>
+          <div class="term-line term-output">[INFO] Script initialized. Click "Run Script" to execute study planner schedule generator...</div>
+        `;
+      } else {
+        tabPlanner.classList.remove('active');
+        tabGestures.classList.add('active');
+        termScreen.innerHTML = `
+          <div class="term-line"><span class="term-prompt">ansi-dev@sahrdaya-pc:~$</span> <span class="term-input">python cia.py</span></div>
+          <div class="term-line term-output">[INFO] Hand-tracker initialized. Click "Run Script" to execute OpenCV MediaPipe camera stream simulation...</div>
+        `;
+      }
+    }
+
+    function executeSimulatedScript() {
+      const outputLines = activeTerminalTab === 'planner' ? [
+        "[INFO] Connecting to AI Scheduler Model...",
+        "[AI Engine] Parsing Syllabus blocks: Relational Algebra & SQL Queries.",
+        "[AI Engine] Compiling weekly study checkpoints...",
+        "----------------------------------------------------",
+        " ✦ WEEK 1 STUDY OUTLINE GENERATED ✦",
+        "  - Day 1: Relational Schema & Schema Diagrams (2 Hrs)",
+        "  - Day 2: DDL statements, primary/foreign keys (2 Hrs)",
+        "  - Day 3: DML Queries (SELECT, JOINs, Group By) (3 Hrs)",
+        "  - Active Recall session scheduled at 19:30 on Sat.",
+        "----------------------------------------------------",
+        "[SUCCESS] Saved schedule output to study_schedule.json"
+      ] : [
+        "[INFO] Loading MediaPipe Hands framework...",
+        "[INFO] Camera module opened at resolution 1280x720 30FPS.",
+        "[HUD Overlay] Initialized. Press 'Q' inside live window to close.",
+        "[DETECT] Frame 124: Right Hand detected. Class: Right.",
+        "[DETECT] Raised Fingers: Thumb + Index. [Label: Zoom gesture]",
+        "[DETECT] Frame 189: Left Hand detected. Class: Left.",
+        "[DETECT] Raised Fingers: Index + Middle + Ring. [Label: Three Raised]",
+        "[DETECT] Frame 210: Right Hand detected. Class: Right.",
+        "[DETECT] Raised Fingers: None. [Label: Closed Fist]",
+        "[INFO] camera release() complete. Session successfully exited."
+      ];
+
+      // Add typewriter simulation
+      let index = 0;
+      termScreen.innerHTML += `<div class="term-line" style="color:var(--accent-cyan); font-weight:bold;">[EXECUTE RUN]</div>`;
+      
+      const interval = setInterval(() => {
+        if (index < outputLines.length) {
+          termScreen.innerHTML += `<div class="term-line term-output">${outputLines[index]}</div>`;
+          termScreen.scrollTop = termScreen.scrollHeight;
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 350);
+    }
+
+    // ==========================================
+    // CONTACT FORM INTERACTIVE HANDLER
+    // ==========================================
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const statusEl = document.getElementById('form-status-msg');
+      const form = document.getElementById('contact-form');
+      
+      statusEl.className = "form-status sending";
+      statusEl.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Transmitting...`;
+      
+      setTimeout(() => {
+        statusEl.className = "form-status success";
+        statusEl.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you! Message sent successfully.`;
+        form.reset();
+      }, 1500);
+    }
+  </script>
+
+
+</body></html>
